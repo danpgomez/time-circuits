@@ -1,7 +1,12 @@
 import ResultCard from "../ResultCard";
 import "./ResultsGrid.css";
 
-function ResultsGrid({ searchResults, status }) {
+function ResultsGrid({
+    searchResults,
+    status,
+    selectedItems,
+    setSelectedItems
+}) {
 
     if (status == "error" || !searchResults) {
         return <p className="error-message">Oops! Something went wrong"</p>;
@@ -11,12 +16,15 @@ function ResultsGrid({ searchResults, status }) {
         return <p className="no-results-message">No results found</p>;
     }
 
+    // TODO: use the selectedItems to create the movie timelines
+    console.log(selectedItems);
+
     return (
-       <ul className="results-grid">
-        {searchResults.map(movie => {
-            return <ResultCard result={movie} />;
-        })}
-       </ul>
+        <ul className="results-grid">
+            {searchResults.map(movie => {
+                return <ResultCard result={movie} setSelectedItems={setSelectedItems} key={movie.id} />;
+            })}
+        </ul>
     );
 }
 

@@ -1,7 +1,16 @@
-.result-card {
+.result-item {
+    list-style: none;
+}
+
+.result-card,
+.result-image {
     max-width: 100%;
 }
 
-.result-image {
-    width: 100%;
+.result-item>button:hover {
+    background-color: #59407b;
+}
+
+button.selected {
+    background-color: orange;
 }
