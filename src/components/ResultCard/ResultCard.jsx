@@ -8,7 +8,7 @@ function ResultCard({ result, setSelectedItems }) {
     const date = result.release_date.split("-")[0];
     const buttonRef = useRef();
 
-    function handleSelected(event) {
+    function handleSelected() {
         setSelectedItems(result.id);
         buttonRef.current.classList.toggle("selected");
         console.log(buttonRef.current.classList); // TODO: remove. For debugging purposes only.
@@ -16,7 +16,7 @@ function ResultCard({ result, setSelectedItems }) {
 
     return (
     <li className="result-item">
-        <button onClick={event => handleSelected(event)} ref={buttonRef}>
+        <button onClick={handleSelected} ref={buttonRef}>
             <article className="result-card">
                 {result.poster_path ? <img src={src} alt={result.title} className="result-image"/> : <PlaceholderImage />}
                 <h2>{result.title}</h2>
