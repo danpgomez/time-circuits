@@ -5,11 +5,12 @@ import ResultsGrid from './components/ResultsGrid';
 
 function App() {
   const [results, setResults] = React.useState([])
+  const [status, setStatus] = React.useState("idle");
   
   return (
     <>
-      <Search setResults={ setResults }/>
-      <ResultsGrid searchResults={ results } />
+      <Search setResults={ setResults } status={ status } setStatus={ setStatus } />
+      <ResultsGrid searchResults={ results } status={ status } />
     </>
   )
 }
