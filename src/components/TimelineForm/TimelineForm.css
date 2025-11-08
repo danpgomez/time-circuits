@@ -1,0 +1,20 @@
+.timeline-dialog::backdrop {
+    /* position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    background-color: hsla(0, 0%, 80%, 0.5);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.timeline-form {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 10px;
+}

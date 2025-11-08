@@ -10,11 +10,6 @@ function App() {
   const [status, setStatus] = React.useState("idle");
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [timelines, setTimelines] = React.useState([]);
-  const [showTimelineForm, setShowTimelineForm] = React.useState(false);
-
-  function handleTimelineFormDisplay() {
-    setShowTimelineForm(!showTimelineForm);
-  }
   
   return (
     <>
@@ -24,8 +19,7 @@ function App() {
           status={status}
           setStatus={setStatus}
         />
-        <button className="new-timeline-button" onClick={handleTimelineFormDisplay}>New Timeline</button>
-        {showTimelineForm && <TimelineForm timelines={timelines} setTimelines={setTimelines} />}
+        <TimelineForm timelines={timelines} setTimelines={setTimelines}/>
       </header>
       <main>
         <TimelinesList timelines={timelines}/>
