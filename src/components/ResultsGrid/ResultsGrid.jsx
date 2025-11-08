@@ -22,7 +22,12 @@ function ResultsGrid({
     return (
         <ul className="results-grid">
             {searchResults.map(movie => {
-                return <ResultCard result={movie} setSelectedItems={setSelectedItems} key={movie.id} />;
+                return <ResultCard 
+                    result={movie} 
+                    key={movie.id} 
+                    selectedItems={selectedItems}
+                    setSelectedItems={setSelectedItems} 
+                />;
             })}
         </ul>
     );

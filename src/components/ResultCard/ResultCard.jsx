@@ -3,15 +3,23 @@ import "./ResultCard.css";
 import "../PlaceholderImage";
 import PlaceholderImage from "../PlaceholderImage";
 
-function ResultCard({ result, setSelectedItems }) {
+function ResultCard({ result, selectedItems, setSelectedItems }) {
     const src = `https://image.tmdb.org/t/p/original/${result.poster_path}`;
     const date = result.release_date.split("-")[0];
     const buttonRef = useRef();
 
     function handleSelected() {
-        setSelectedItems(result.id);
         buttonRef.current.classList.toggle("selected");
-        console.log(buttonRef.current.classList); // TODO: remove. For debugging purposes only.
+        const isSelected = buttonRef.current.classList.contains("selected");
+        
+        if (isSelected) {
+            setSelectedItems([...selectedItems, result.id]);
+        } else {
+            const filteredSelectedItems = [...selectedItems].filter(itemId => itemId !== result.id);
+            setSelectedItems(filteredSelectedItems);
+        }
+
+        //console.log(buttonRef.current.classList); // TODO: remove. For debugging purposes only.
     }
 
     return (

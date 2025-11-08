@@ -1,4 +1,4 @@
-function TimelineForm({ setTimelines }) {
+function TimelineForm({ timelines, setTimelines }) {
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -8,7 +8,7 @@ function TimelineForm({ setTimelines }) {
             name: formData.get("timeline-name"),
             movies: []
         };
-        setTimelines(newTimeline);
+        setTimelines([...timelines, newTimeline]);
     }
 
     return <form action="" className="timeline-form" onSubmit={event => handleSubmit(event)}>

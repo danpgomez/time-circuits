@@ -3,6 +3,7 @@ import './App.css'
 import Search from "./components/Search";
 import ResultsGrid from './components/ResultsGrid';
 import TimelineForm from "./components/TimelineForm";
+import TimelinesList from "./components/TimelinesList";
 
 function App() {
   const [results, setResults] = React.useState([])
@@ -12,12 +13,13 @@ function App() {
   
   return (
     <>
-      <TimelineForm setTimelines={setTimelines} />
+      <TimelineForm timelines={timelines} setTimelines={setTimelines} />
       <Search
         setResults={setResults}
         status={status}
         setStatus={setStatus}
       />
+      <TimelinesList timelines={timelines}/>
       <ResultsGrid
         searchResults={results}
         status={status}
