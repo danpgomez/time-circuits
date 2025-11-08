@@ -10,22 +10,32 @@ function App() {
   const [status, setStatus] = React.useState("idle");
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [timelines, setTimelines] = React.useState([]);
+  const [showTimelineForm, setShowTimelineForm] = React.useState(false);
+
+  function handleTimelineFormDisplay() {
+    setShowTimelineForm(!showTimelineForm);
+  }
   
   return (
     <>
-      <TimelineForm timelines={timelines} setTimelines={setTimelines} />
-      <Search
-        setResults={setResults}
-        status={status}
-        setStatus={setStatus}
-      />
-      <TimelinesList timelines={timelines}/>
-      <ResultsGrid
-        searchResults={results}
-        status={status}
-        selectedItems={selectedItems}
-        setSelectedItems={setSelectedItems}
-      />
+      <header>
+        <Search
+          setResults={setResults}
+          status={status}
+          setStatus={setStatus}
+        />
+        <button className="new-timeline-button" onClick={handleTimelineFormDisplay}>New Timeline</button>
+        {showTimelineForm && <TimelineForm timelines={timelines} setTimelines={setTimelines} />}
+      </header>
+      <main>
+        <TimelinesList timelines={timelines}/>
+        <ResultsGrid
+          searchResults={results}
+          status={status}
+          selectedItems={selectedItems}
+          setSelectedItems={setSelectedItems}
+        />
+      </main>
     </>
   )
 }
