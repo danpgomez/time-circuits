@@ -12,12 +12,9 @@ function ResultsGrid({
         return <p className="error-message">Oops! Something went wrong"</p>;
     }
 
-    if (searchResults.length === 0) {
+    if (status == "success" && searchResults.length === 0) {
         return <p className="no-results-message">No results found</p>;
     }
-
-    // TODO: use the selectedItems to create the movie timelines
-    console.log(selectedItems);
 
     return (
         <ul className="results-grid">

@@ -25,6 +25,7 @@ function TimelineForm({ timelines, setTimelines }) {
             movies: []
         };
         setTimelines([...timelines, newTimeline]);
+        closeDialog();
     }
 
     return <>

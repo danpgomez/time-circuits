@@ -10,7 +10,17 @@ function ResultCard({ result, selectedItems, setSelectedItems }) {
 
     function handleSelected() {
         buttonRef.current.classList.toggle("selected");
-        const isSelected = buttonRef.current.classList.contains("selected");
+        let isSelected = buttonRef.current.classList.contains("selected");
+        const selectedMovie = {
+            id: result.id,
+            title: result.title,
+            posterPath: result.poster_path,
+            status: "want-to-watch",
+            rating: null,
+            dateAdded: new Date().toLocaleDateString() 
+        }
+
+        console.log(selectedMovie);
         
         if (isSelected) {
             setSelectedItems([...selectedItems, result.id]);

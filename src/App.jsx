@@ -4,12 +4,15 @@ import Search from "./components/Search";
 import ResultsGrid from './components/ResultsGrid';
 import TimelineForm from "./components/TimelineForm";
 import TimelinesList from "./components/TimelinesList";
+import TimelineSelection from "./components/TimelineSelection";
 
 function App() {
   const [results, setResults] = React.useState([])
   const [status, setStatus] = React.useState("idle");
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [timelines, setTimelines] = React.useState([]);
+
+  console.log(timelines);
   
   return (
     <>
@@ -22,6 +25,17 @@ function App() {
         <TimelineForm timelines={timelines} setTimelines={setTimelines}/>
       </header>
       <main>
+        {
+          selectedItems.length > 0 && 
+          <TimelineSelection 
+            selectedItems={selectedItems} 
+            setSelectedItems={setSelectedItems}
+            timelines={timelines} 
+            setTimelines={setTimelines} 
+            setResults={setResults}
+            setStatus={setStatus}
+          />
+        }
         <TimelinesList timelines={timelines}/>
         <ResultsGrid
           searchResults={results}
