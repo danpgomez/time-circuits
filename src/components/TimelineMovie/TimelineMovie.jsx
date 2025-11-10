@@ -1,23 +1,61 @@
-import { useRef } from "react";
 import PlaceholderImage from "../PlaceholderImage";
 import "./TimelineMovie.css";
 
-function TimelineMovie({ movie }) {
-    console.log(movie);
+function TimelineMovie({ 
+    movie, 
+    timeline, 
+    setSelectedTimeline,
+    timelines,
+    setTimelines
+}) {
     const src = `https://image.tmdb.org/t/p/original/${movie.posterPath}`;
-    const buttonRef = useRef();
 
-    function handleSelected() {
-        console.log(buttonRef);
+    function updateMovieStatus(event) {
+        const updatedMovie = {
+            ...movie,
+            status: event.target.value
+        };
+
+        const newMovies = timeline.movies.map(movie => {
+            if (movie.id === updatedMovie.id) {
+                return updatedMovie;
+            } else {
+                return movie;
+            }
+        });
+
+        const updatedTimeline = {
+            ...timeline,
+            movies: newMovies
+        };
+
+        setSelectedTimeline(updatedTimeline);
+
+        const updatedTimelines = timelines.map(existingTimeline => {
+            if (existingTimeline.id === timeline.id) {
+                return updatedTimeline;
+            } else {
+                return existingTimeline;
+            }
+        });
+
+        setTimelines(updatedTimelines);
     }
 
-    return <button onClick={handleSelected} ref={buttonRef}>
-            <article className="movie-card">
-                {movie.posterPath ? <img src={src} alt={movie.title} className="movie-image"/> : <PlaceholderImage />}
-                <h2>{movie.title}</h2>
-                <h3>{movie.dateAdded}</h3>
-            </article>
-        </button>
+    return <article className="movie-card">
+            {movie.posterPath ? <img src={src} alt={movie.title} className="movie-image" /> : <PlaceholderImage />}
+            <h2>{movie.title}</h2>
+            <h3>Date Added: {movie.dateAdded}</h3>
+            <select 
+                className="movie-status" 
+                value={movie.status}
+                onChange={event => updateMovieStatus(event)}
+            >
+                <option value="want-to-watch">Want to Watch</option>
+                <option value="watching">Watching</option>
+                <option value="completed">Completed</option>
+            </select>
+        </article>
 }
 
 export default TimelineMovie;

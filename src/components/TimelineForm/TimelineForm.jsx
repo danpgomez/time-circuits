@@ -3,6 +3,7 @@ import "./TimelineForm.css";
 
 function TimelineForm({ timelines, setTimelines }) {
     const dialogRef = useRef();
+    const formInputRef = useRef();
 
     function handleTimelineFormDisplay() {
         if (!dialogRef.current.open) {
@@ -25,6 +26,7 @@ function TimelineForm({ timelines, setTimelines }) {
             movies: []
         };
         setTimelines([...timelines, newTimeline]);
+        formInputRef.current.value = "";
         closeDialog();
     }
 
@@ -38,6 +40,7 @@ function TimelineForm({ timelines, setTimelines }) {
                     type="text"
                     id="timeline-name"
                     name="timeline-name"
+                    ref={formInputRef}
                     placeholder="Action Films"
                 />
                 <button type="submit" className="dialog-submit-btn">Create Timeline</button>

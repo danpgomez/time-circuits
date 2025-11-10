@@ -13,8 +13,6 @@ function App() {
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [timelines, setTimelines] = React.useState([]);
   const [selectedTimeline, setSelectedTimeline] = React.useState("");
-
-  console.log(timelines);
   
   return (
     <>
@@ -44,7 +42,12 @@ function App() {
           setSelectedTimeline={setSelectedTimeline}
         />
 
-        {selectedTimeline && <TimelineDetail timeline={selectedTimeline} />}
+        {selectedTimeline && <TimelineDetail 
+          timeline={selectedTimeline} 
+          setSelectedTimeline={setSelectedTimeline}
+          timelines={timelines} 
+          setTimelines={setTimelines} 
+        />}
 
         {(status == "error" || !results) && <p className="error-message">Oops! Something went wrong</p>}
         {(status == "success" && results.length === 0) && <p className="error-message">No results found</p>}
