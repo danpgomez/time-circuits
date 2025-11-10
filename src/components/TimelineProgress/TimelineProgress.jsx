@@ -1,0 +1,9 @@
+function TimelineProgress({ movies }) {
+
+    const watchedMovies = movies.filter(movie => movie.status === "completed").length;
+    const progress = Math.round(watchedMovies/movies.length * 100);
+           
+    return <p>{progress}% completed</p>
+}
+
+export default TimelineProgress;

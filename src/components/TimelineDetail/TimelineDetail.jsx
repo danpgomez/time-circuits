@@ -1,5 +1,6 @@
 import TimelineMovie from "../TimelineMovie/TimelineMovie";
 import "./TimelineDetail.css";
+import TimelineProgress from "../TimelineProgress";
 
 function TimelineDetail({ 
     timeline, 
@@ -10,6 +11,7 @@ function TimelineDetail({
     return (
         <>
             <h3>{timeline.name}</h3>
+            <TimelineProgress movies={timeline.movies} />
             <ul className="timeline-movie-list">
                 {timeline.movies.map(movie => {
                     return <li key={movie.id}>
