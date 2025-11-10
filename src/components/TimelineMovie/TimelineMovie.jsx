@@ -10,6 +10,11 @@ function TimelineMovie({
 }) {
     const src = `https://image.tmdb.org/t/p/original/${movie.posterPath}`;
 
+    function deleteMovie() {
+        const newMovies = timeline.movies.filter(timelineMovie => timelineMovie.id !== movie.id);
+        updateTimelines(newMovies)
+    }
+
     function updateMovieStatus(event) {
         const updatedMovie = {
             ...movie,
@@ -24,6 +29,10 @@ function TimelineMovie({
             }
         });
 
+        updateTimelines(newMovies);
+    }
+
+    function updateTimelines(newMovies) {
         const updatedTimeline = {
             ...timeline,
             movies: newMovies
@@ -55,6 +64,7 @@ function TimelineMovie({
                 <option value="watching">Watching</option>
                 <option value="completed">Completed</option>
             </select>
+            <button onClick={deleteMovie}>Delete</button>
         </article>
 }
 
