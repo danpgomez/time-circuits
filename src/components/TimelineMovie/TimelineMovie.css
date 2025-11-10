@@ -1,0 +1,12 @@
+.movie-card,
+.movie-image {
+    max-width: 100%;
+}
+
+.movie-item>button:hover {
+    background-color: #59407b;
+}
+
+button.selected {
+    background-color: orange;
+}

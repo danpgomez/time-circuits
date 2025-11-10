@@ -5,12 +5,14 @@ import ResultsGrid from './components/ResultsGrid';
 import TimelineForm from "./components/TimelineForm";
 import TimelinesList from "./components/TimelinesList";
 import TimelineSelection from "./components/TimelineSelection";
+import TimelineDetail from "./components/TimelineDetail/TimelineDetail";
 
 function App() {
   const [results, setResults] = React.useState([])
   const [status, setStatus] = React.useState("idle");
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [timelines, setTimelines] = React.useState([]);
+  const [selectedTimeline, setSelectedTimeline] = React.useState("");
 
   console.log(timelines);
   
@@ -21,6 +23,7 @@ function App() {
           setResults={setResults}
           status={status}
           setStatus={setStatus}
+          setSelectedTimeline={setSelectedTimeline}
         />
         <TimelineForm timelines={timelines} setTimelines={setTimelines}/>
       </header>
@@ -36,7 +39,12 @@ function App() {
             setStatus={setStatus}
           />
         }
-        <TimelinesList timelines={timelines}/>
+        <TimelinesList 
+          timelines={timelines}
+          setSelectedTimeline={setSelectedTimeline}
+        />
+
+        {selectedTimeline && <TimelineDetail timeline={selectedTimeline} />}
 
         {(status == "error" || !results) && <p className="error-message">Oops! Something went wrong</p>}
         {(status == "success" && results.length === 0) && <p className="error-message">No results found</p>}

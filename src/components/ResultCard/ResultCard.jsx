@@ -20,7 +20,7 @@ function ResultCard({ result, selectedItems, setSelectedItems }) {
             dateAdded: new Date().toLocaleDateString() 
         }
         
-        if (isSelected && !selectedItems.includes(selectedMovie.id)) {
+        if (isSelected) {
             setSelectedItems([...selectedItems, selectedMovie]);
         } else {
             const filteredSelectedItems = [...selectedItems].filter(item => item.id !== result.id);

@@ -13,10 +13,14 @@ function TimelineSelection({
         const selectedTimelineId = formData.get("timeline-selection");
 
         const updatedTimelines = timelines.map(timeline => {
+
             if (timeline.id === selectedTimelineId) {
+                const existingIds = new Set(timeline.movies.map(movie => movie.id));
+                const newMovies = selectedItems.filter(item => !existingIds.has(item.id));
+
                 return {
                     ...timeline,
-                    movies: [...timeline.movies, ...selectedItems]
+                    movies: [...timeline.movies, ...newMovies]
                 };
             }
 
@@ -24,7 +28,7 @@ function TimelineSelection({
         });
 
         setTimelines(updatedTimelines);
-        // setSelectedItems([]);
+        setSelectedItems([]);
         // setResults([]);
         setStatus("idle");
     }

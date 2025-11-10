@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-function Search({ setResults, status, setStatus }) {
+function Search({ setResults, status, setStatus, setSelectedTimeline }) {
     const [query, setQuery] = useState("");
 
     function handleChange(event) {
         setQuery(event.target.value);
+        setSelectedTimeline("");
     }
 
     async function handleSearch(event) {
