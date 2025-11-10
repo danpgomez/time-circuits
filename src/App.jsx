@@ -37,12 +37,16 @@ function App() {
           />
         }
         <TimelinesList timelines={timelines}/>
-        <ResultsGrid
+
+        {(status == "error" || !results) && <p className="error-message">Oops! Something went wrong</p>}
+        {(status == "success" && results.length === 0) && <p className="error-message">No results found</p>}
+
+        {(status == "success" && results.length !== 0) && <ResultsGrid
           searchResults={results}
           status={status}
           selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
-        />
+        />}
       </main>
     </>
   )
