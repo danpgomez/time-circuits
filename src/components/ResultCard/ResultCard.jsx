@@ -19,17 +19,13 @@ function ResultCard({ result, selectedItems, setSelectedItems }) {
             rating: null,
             dateAdded: new Date().toLocaleDateString() 
         }
-
-        console.log(selectedMovie);
         
-        if (isSelected) {
-            setSelectedItems([...selectedItems, result.id]);
+        if (isSelected && !selectedItems.includes(selectedMovie.id)) {
+            setSelectedItems([...selectedItems, selectedMovie]);
         } else {
-            const filteredSelectedItems = [...selectedItems].filter(itemId => itemId !== result.id);
+            const filteredSelectedItems = [...selectedItems].filter(item => item.id !== result.id);
             setSelectedItems(filteredSelectedItems);
         }
-
-        //console.log(buttonRef.current.classList); // TODO: remove. For debugging purposes only.
     }
 
     return (

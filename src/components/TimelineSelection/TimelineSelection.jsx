@@ -24,8 +24,8 @@ function TimelineSelection({
         });
 
         setTimelines(updatedTimelines);
-        setSelectedItems([]);
-        setResults([]);
+        // setSelectedItems([]);
+        // setResults([]);
         setStatus("idle");
     }
 
