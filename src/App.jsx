@@ -28,23 +28,27 @@ function App() {
               setSelectedTimeline={setSelectedTimeline}
             />
           </div>
-          {selectedItems.length > 0 &&
-            <TimelineSelection
-              selectedItems={selectedItems}
-              setSelectedItems={setSelectedItems}
-              timelines={timelines}
-              setTimelines={setTimelines}
-              setResults={setResults}
-              setStatus={setStatus}
-            />
-          }
-          <TimelinesList
-            timelines={timelines}
-            setSelectedTimeline={setSelectedTimeline}
-            setStatus={setStatus}
-          />
         </div>
       </header>
+      <nav className="timeline-bar">
+        <TimelinesList
+          timelines={timelines}
+          setSelectedTimeline={setSelectedTimeline}
+          setStatus={setStatus}
+        />
+      </nav>
+      {selectedItems.length > 0 &&
+        <section className="action-bar">
+          <TimelineSelection
+            selectedItems={selectedItems}
+            setSelectedItems={setSelectedItems}
+            timelines={timelines}
+            setTimelines={setTimelines}
+            setResults={setResults}
+            setStatus={setStatus}
+          />
+        </section>
+      }
       <main>
 
         {selectedTimeline && <TimelineDetail

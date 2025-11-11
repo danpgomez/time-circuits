@@ -36,6 +36,10 @@ function TimelineSelection({
     }
 
     return (
+        <>
+        <p className="action-bar__message">
+            <strong>{selectedItems.length}</strong> item{selectedItems.length > 1 ? 's' : ''} selected
+        </p>
         <form name="add-to-timeline-form" className="add-to-timeline-form" action="" onSubmit={event => addSelectedToTimeline(event)}>
             <select name="timeline-selection" id="timeline-selection">
                 <option value="">-- Select Timeline --</option>
@@ -43,6 +47,7 @@ function TimelineSelection({
             </select>
             <button type="submit">Add to Timeline</button>
         </form>
+        </>
     );
 }
 

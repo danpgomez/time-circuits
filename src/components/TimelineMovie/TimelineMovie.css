@@ -3,14 +3,34 @@
     max-width: 100%;
 }
 
-.movie-item>button:hover {
+.movie-card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-secondary);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
 }
 
-button.selected {
+.movie-card>button {
+    background-color: var(--color-danger);
+    padding: var(--spacing-sm);
+    border: 0;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: var(--border-radius);
+}
+
+.delete-button:hover {
     background-color: var(--color-primary);
 }
 
 .delete-button {
     background-color: var(--color-danger);
+}
+
+.movie-status {
+    height: fit-content;
+    font-size: var(--text-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
 }

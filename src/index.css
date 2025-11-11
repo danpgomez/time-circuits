@@ -26,12 +26,12 @@
   /* Colors */
   --color-primary: orange;
   --color-secondary: #59407b;
-  --color-background: black;
+  --color-background: hsl(230 30 15);
   --color-surface: grey;
   --color-text: white;
   --color-text-secondary: lightgrey;
   --color-danger: goldenrod; /* for delete buttons etc. */
-  --color-error: red;
+  --color-error: hsl(3 82 41);
   --color-warning: yellow;
   --color--success: green;
   --color-info: blue;

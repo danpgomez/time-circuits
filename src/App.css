@@ -4,7 +4,7 @@
  }
 
  body {
-  padding: var(--spacing-md);
+   padding: var(--spacing-md);
  }
 
  button {
@@ -29,6 +29,32 @@
  .controls-timeline-creation {
    display: flex;
    flex-direction: column;
+ }
+
+ .action-bar {
+   background-color: var(--color-primary);
+   padding: var(--spacing-sm) var(--spacing-md);
+   border-bottom: 2px solid var(--color-secondary);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: var(--spacing-md);
+   position: sticky;
+   top: 0;
+   z-index: 99;
+   animation: slideDown 0.3s ease;
+ }
+
+ @keyframes slideDown {
+   from {
+     transform: translateY(-100%);
+     opacity: 0;
+   }
+
+   to {
+     tranform: translateY(0);
+     opacity: 1;
+   }
  }
 
  @media (min-width: 432px) {

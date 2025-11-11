@@ -14,8 +14,9 @@
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-@media (min-width: 432px) {
-    .add-to-timeline-form {
-        /* margin-left: var(--spacing-md); */
-    }
+.action-bar__message {
+    margin: 0;
+    font-size: var(--text-base);
+    color: var(--color-background);
+    font-weight: 600;
 }
