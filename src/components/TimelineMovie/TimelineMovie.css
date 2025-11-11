@@ -4,9 +4,13 @@
 }
 
 .movie-item>button:hover {
-    background-color: #59407b;
+    background-color: var(--color-secondary);
 }
 
 button.selected {
-    background-color: orange;
+    background-color: var(--color-primary);
+}
+
+.delete-button {
+    background-color: var(--color-danger);
 }

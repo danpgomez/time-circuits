@@ -1,6 +1,6 @@
 .placeholder-image {
-    max-width: 100%;
-    height: 348px;
+    width: 100%;
+    height: 330px;
     background-color: lightgrey;
     display: flex;
     align-items: center;

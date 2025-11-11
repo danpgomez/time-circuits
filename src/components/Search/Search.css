@@ -1,0 +1,18 @@
+.movie-search-form {
+    display: flex;
+}
+
+.movie-search-form input {
+    flex: 1;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.movie-search-form button {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+@media (min-width: 432px) {
+    .movie-search-form {
+        margin-left: var(--spacing-md);
+    }
+}

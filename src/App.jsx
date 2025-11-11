@@ -13,40 +13,45 @@ function App() {
   const [selectedItems, setSelectedItems] = React.useState([]);
   const [timelines, setTimelines] = React.useState([]);
   const [selectedTimeline, setSelectedTimeline] = React.useState("");
-  
+
   return (
     <>
       <header>
-        <Search
-          setResults={setResults}
-          status={status}
-          setStatus={setStatus}
-          setSelectedTimeline={setSelectedTimeline}
-        />
-        <TimelineForm timelines={timelines} setTimelines={setTimelines}/>
-      </header>
-      <main>
-        {
-          selectedItems.length > 0 && 
-          <TimelineSelection 
-            selectedItems={selectedItems} 
-            setSelectedItems={setSelectedItems}
-            timelines={timelines} 
-            setTimelines={setTimelines} 
-            setResults={setResults}
+        <h1 id="logo">Time Circuits</h1>
+        <div className="controls">
+          <div className="controls-timeline-creation">
+            <TimelineForm timelines={timelines} setTimelines={setTimelines} />
+            <Search
+              setResults={setResults}
+              status={status}
+              setStatus={setStatus}
+              setSelectedTimeline={setSelectedTimeline}
+            />
+          </div>
+          {selectedItems.length > 0 &&
+            <TimelineSelection
+              selectedItems={selectedItems}
+              setSelectedItems={setSelectedItems}
+              timelines={timelines}
+              setTimelines={setTimelines}
+              setResults={setResults}
+              setStatus={setStatus}
+            />
+          }
+          <TimelinesList
+            timelines={timelines}
+            setSelectedTimeline={setSelectedTimeline}
             setStatus={setStatus}
           />
-        }
-        <TimelinesList 
-          timelines={timelines}
-          setSelectedTimeline={setSelectedTimeline}
-        />
+        </div>
+      </header>
+      <main>
 
-        {selectedTimeline && <TimelineDetail 
-          timeline={selectedTimeline} 
+        {selectedTimeline && <TimelineDetail
+          timeline={selectedTimeline}
           setSelectedTimeline={setSelectedTimeline}
-          timelines={timelines} 
-          setTimelines={setTimelines} 
+          timelines={timelines}
+          setTimelines={setTimelines}
         />}
 
         {(status == "error" || !results) && <p className="error-message">Oops! Something went wrong</p>}

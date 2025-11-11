@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Search.css";
 
 function Search({ setResults, status, setStatus, setSelectedTimeline }) {
     const [query, setQuery] = useState("");
@@ -32,10 +33,11 @@ function Search({ setResults, status, setStatus, setSelectedTimeline }) {
     }
 
     return (
-        <form onSubmit={(e) => handleSearch(e)}>
+        <form onSubmit={(e) => handleSearch(e)} className="movie-search-form">
             <input
                 name="query"
                 value={query}
+                placeholder="Back to the Future"
                 onChange={event => {
                     handleChange(event);
                 }}

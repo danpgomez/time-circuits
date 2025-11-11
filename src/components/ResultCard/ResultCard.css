@@ -1,16 +1,32 @@
 .result-item {
     list-style: none;
+    width: 100%;
 }
 
-.result-card,
+.result-item>button {
+    padding: var(--spacing-sm);
+    border: 0;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: var(--border-radius);
+}
+
+.result-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .result-image {
     max-width: 100%;
 }
 
 .result-item>button:hover {
-    background-color: #59407b;
+    background-color: var(--color-secondary);
 }
 
 button.selected {
-    background-color: orange;
+    background-color: var(--color-primary);
 }

@@ -1,0 +1,21 @@
+.add-to-timeline-form {
+    display: flex;
+}
+
+#timeline-selection {
+    flex: 1;
+    height: fit-content;
+    font-size: var(--text-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.add-to-timeline-form button {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+@media (min-width: 432px) {
+    .add-to-timeline-form {
+        /* margin-left: var(--spacing-md); */
+    }
+}

@@ -1,3 +1,5 @@
+import "./TimelineSelection.css";
+
 function TimelineSelection({
     selectedItems,
     setSelectedItems,
@@ -34,9 +36,9 @@ function TimelineSelection({
     }
 
     return (
-        <form name="add-to-timeline-form" action="" onSubmit={event => addSelectedToTimeline(event)}>
+        <form name="add-to-timeline-form" className="add-to-timeline-form" action="" onSubmit={event => addSelectedToTimeline(event)}>
             <select name="timeline-selection" id="timeline-selection">
-                <option value="">-- Please select a Timeline --</option>
+                <option value="">-- Select Timeline --</option>
                 {timelines.map(timeline => <option value={timeline.id} key={timeline.id}>{timeline.name}</option>)}
             </select>
             <button type="submit">Add to Timeline</button>

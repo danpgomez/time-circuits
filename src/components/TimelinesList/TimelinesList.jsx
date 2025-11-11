@@ -1,7 +1,8 @@
 import "./TimelinesList.css";
 
-function TimelinesList({ timelines, setSelectedTimeline }) {
+function TimelinesList({ timelines, setSelectedTimeline, setStatus }) {
     function handleSelectTimeline(timeline) {
+        setStatus("idle");
         setSelectedTimeline(timeline);
     }
 

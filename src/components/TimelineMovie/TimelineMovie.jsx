@@ -64,7 +64,7 @@ function TimelineMovie({
                 <option value="watching">Watching</option>
                 <option value="completed">Completed</option>
             </select>
-            <button onClick={deleteMovie}>Delete</button>
+            <button className="delete-button" onClick={deleteMovie}>Delete</button>
         </article>
 }
 
