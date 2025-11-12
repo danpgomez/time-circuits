@@ -76,6 +76,10 @@
      flex-direction: row;
      justify-content: flex-end;
    }
+
+   .action-bar {
+      top: calc(var(--timeline-bar-height) + 1rem);
+   }
  }
 
  /*.logo {

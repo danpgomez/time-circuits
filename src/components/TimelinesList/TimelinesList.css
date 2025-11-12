@@ -61,7 +61,7 @@
     font-weight: 700;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 690px) {
     .timelines-list {
         flex-direction: column;
         align-items: flex-start;
