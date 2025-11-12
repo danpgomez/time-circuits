@@ -12,21 +12,36 @@ function Search({ setResults, status, setStatus, setSelectedTimeline }) {
     async function handleSearch(event) {
         setStatus("loading");
         event.preventDefault();
-        const key = import.meta.env.VITE_TMDB_API_KEY;
-        const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${key}`;
+
+        // Call our Netlify function instead of TMDb directly
+        // This keeps the API key secure on the server
+        const functionUrl = '/.netlify/functions/search-movies';
 
         try {
-            const response = await fetch(url);
-            
-            if (response.ok) {
-                setStatus("success");
-            }
-            
+            const response = await fetch(functionUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query })
+            });
+
             const json = await response.json();
-            setResults(json.results);
+
+            // Check if the request was successful
+            if (response.ok && json.results) {
+                setStatus("success");
+                setResults(json.results);
+            } else {
+                // Handle errors from the function or TMDb
+                console.error('Search error:', json.error || 'Unknown error');
+                setStatus("error");
+                setResults([]);
+            }
         } catch (error) {
-            console.log(error);
+            console.error('Network error:', error);
             setStatus("error");
+            setResults([]);
         }
 
         setQuery("");
