@@ -1,3 +1,7 @@
+.timeline-name {
+    text-align: center;
+}
+
 .timeline-movie-list {
     list-style: none;
     display: grid;

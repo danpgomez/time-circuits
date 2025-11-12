@@ -10,8 +10,8 @@ function TimelineDetail({
 }) {
     return (
         <>
-            <h3>{timeline.name}</h3>
-            <TimelineProgress movies={timeline.movies} />
+            <h2 className="timeline-name">{timeline.name}</h2>
+            {timeline.movies.length > 0 && <TimelineProgress movies={timeline.movies} />}
             <ul className="timeline-movie-list">
                 {timeline.movies.map(movie => {
                     return <li key={movie.id}>

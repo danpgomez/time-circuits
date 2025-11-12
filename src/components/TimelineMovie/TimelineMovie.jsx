@@ -53,7 +53,7 @@ function TimelineMovie({
 
     return <article className="movie-card">
             {movie.posterPath ? <img src={src} alt={movie.title} className="movie-image" /> : <PlaceholderImage />}
-            <h2>{movie.title}</h2>
+            <h3>{movie.title}</h3>
             <p>Date Added: {movie.dateAdded}</p>
             <select 
                 className="movie-status" 
