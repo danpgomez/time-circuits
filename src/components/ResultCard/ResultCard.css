@@ -25,5 +25,5 @@
 
 .result-item>button:hover,
 .result-item>button.selected {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
 }

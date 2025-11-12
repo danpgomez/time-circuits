@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -7,11 +6,16 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Spacing */
-  --spacing-xs: 0.25rem; /* 4px */
-  --spacing-sm: 0.5rem;  /* 8px */
-  --spacing-md: 1rem;    /* 16px */
-  --spacing-lg: 1.5rem;  /* 24px */
-  --spacing-xl: 2rem;    /* 32px */
+  --spacing-xs: 0.25rem;
+  /* 4px */
+  --spacing-sm: 0.5rem;
+  /* 8px */
+  --spacing-md: 1rem;
+  /* 16px */
+  --spacing-lg: 1.5rem;
+  /* 24px */
+  --spacing-xl: 2rem;
+  /* 32px */
   --timeline-bar-height: 2.75rem;
 
 
@@ -27,16 +31,10 @@
 
   /* Colors */
   --color-primary: orange;
-  --color-secondary: #59407b;
+  --color-accent: #59407b;
   --color-background: hsl(230 30 15);
   --color-surface: grey;
   --color-text: white;
-  --color-text-secondary: lightgrey;
-  --color-danger: goldenrod; /* for delete buttons etc. */
-  --color-error: hsl(3 82 41);
-  --color-warning: yellow;
-  --color--success: green;
-  --color-info: blue;
 
   /* Component Specific */
   --border-radius: 0.5rem;
@@ -63,7 +61,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-headings);
 }
 
@@ -97,7 +96,7 @@ a:hover {
   font-weight: 500;
   font-family: inherit;
   color: var(--color-text);
-  background-color: var(--color-secondary);
+  background-color: var(--color-surface);
   cursor: pointer;
   transition: border-color 0.25s;
 }
