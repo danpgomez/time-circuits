@@ -1,6 +1,6 @@
 .timeline-dialog {
     border-radius: var(--border-radius);
-    background-color: var(--color-accent);
+    background-color: var(--color-surface);
     color: var(--color-text);
 }
 
@@ -17,6 +17,11 @@
 
 .new-timeline-button, .dialog-submit-btn {
     background-color: var(--color-primary);
+}
+
+.dialog-close-btn {
+    background-color: var(--color-accent);
+    color: var(--color-text);
 }
 
 #timeline-name {
