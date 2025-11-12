@@ -1,16 +1,25 @@
+.timeline-dialog {
+    border-radius: var(--border-radius);
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
 .timeline-dialog::backdrop {
-    background-color: hsla(0, 0%, 80%, 0.5);
+    background-color: hsla(0 0 10 / 0.5);
 }
 
 .timeline-form {
-    background-color: aliceblue;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 10px;
+    padding: var(--spacing-md);
     border-radius: var(--border-radius);
 }
 
-.new-timeline-button {
+.new-timeline-button, .dialog-submit-btn {
     background-color: var(--color-primary);
+}
+
+#timeline-name {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
 }
