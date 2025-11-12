@@ -1,16 +1,41 @@
-# React + Vite
+# ⚡️ Time Circuits
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based movie timeline organizer inspired by Back to the Future's time circuits. Create custom watchlists and track your movie-watching progress.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Custom Timelines** - Create and manage multiple movie collections
+- **Movie Search** - Search movies using The Movie Database (TMDb) API
+- **Status Tracking** - Organize movies by status: Want to Watch, Currently Watching, or Completed
+- **Progress Visualization** - See your completion progress for each timeline
+- **Batch Operations** - Select and add multiple movies at once
 
-## React Compiler
+## 📸 Screenshots
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<div style="display: flex; flex-wrap: wrap; justify-content: center">
+  <img src="./screenshots/dialog-open.png" style="max-width: 500px; height: auto; margin: 5px;">
+  <img src="./screenshots/selecting-movies.png" style="max-width: 500px; height: auto; margin: 5px;">
+  <img src="./screenshots/timeline-view.png" style="max-width: 500px; height: auto; margin: 5px;">
+  <img src="./screenshots/mobile.png" style="max-width: 500px; height: auto; margin: 5px;">
+</div>
 
-## Expanding the ESLint configuration
+## 🧰 Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19 + Vite
+- Netlify Functions (serverless API)
+- TMDb API
+
+## 🎬 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Or with Netlify Functions
+npm run dev:netlify
+```
+
+Visit `http://localhost:5173` to start organizing your movies.
