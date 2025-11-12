@@ -37,7 +37,7 @@ function App() {
           setStatus={setStatus}
         />
       </nav>
-      {selectedItems.length > 0 &&
+      {timelines.length > 0 && selectedItems.length > 0 &&
         <section className="action-bar">
           <TimelineSelection
             selectedItems={selectedItems}
