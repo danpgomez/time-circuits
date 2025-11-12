@@ -1,9 +1,10 @@
 import "./TimelinesList.css";
 
-function TimelinesList({ timelines, setSelectedTimeline, setStatus }) {
+function TimelinesList({ timelines, setSelectedTimeline, setStatus, setSelectedItems }) {
     function handleSelectTimeline(timeline) {
         setStatus("idle");
         setSelectedTimeline(timeline);
+        setSelectedItems([]);
     }
 
     if (timelines.length === 0) {

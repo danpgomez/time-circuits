@@ -34,6 +34,7 @@ function App() {
         <TimelinesList
           timelines={timelines}
           setSelectedTimeline={setSelectedTimeline}
+          setSelectedItems={setSelectedItems}
           setStatus={setStatus}
         />
       </nav>
