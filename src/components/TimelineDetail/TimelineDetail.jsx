@@ -22,7 +22,7 @@ function TimelineDetail({
                     <h3 className="timeline-section__heading">Want to Watch</h3>
                     <h4 className="timeline-section__subheading">Destination Time</h4>
                 </div>
-                {completedMovies.length === 0 && <p>No pending movies yet.</p>}
+                {wantToWatchMovies.length === 0 && <p>No pending movies yet.</p>}
                 <ul className="timeline-movie-list">
                     {wantToWatchMovies.map(movie => {
                         return <li key={movie.id}>
@@ -42,7 +42,7 @@ function TimelineDetail({
                     <h3 className="timeline-section__heading">Currently Watching</h3>
                     <h4 className="timeline-section__subheading">Present Time</h4>
                 </div>
-                {completedMovies.length === 0 && <p>Not watching any movies at the moment.</p>}
+                {watchingMovies.length === 0 && <p>Not watching any movies at the moment.</p>}
                 <ul className="timeline-movie-list">
                     {watchingMovies.map(movie => {
                         return <li key={movie.id}>
