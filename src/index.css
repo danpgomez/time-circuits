@@ -30,10 +30,10 @@
   --font-headings: 'Orbitron', sans-serif;
 
   /* Colors */
-  --color-primary: orange;
-  --color-accent: #59407b;
+  --color-primary: hsl(38, 81%, 56%);
+  --color-accent: hsl(288, 36%, 47%);
   --color-background: hsl(230 30 15);
-  --color-surface: grey;
+  --color-surface: hsl(230, 30%, 33%);
   --color-text: white;
 
   /* Component Specific */
