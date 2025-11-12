@@ -2,10 +2,10 @@
     background-color: var(--color-surface);
     padding: var(--spacing-sm) var(--spacing-md);
     border-bottom: 2px solid var(--color-primary);
-    margin-bottom: var(--spacing-md);
     position: sticky;
     top: 0;
     z-index: 100;
+    min-height: var(--timeline-bar-height);
 }
 
 .timelines-list {

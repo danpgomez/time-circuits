@@ -40,9 +40,13 @@
    align-items: center;
    gap: var(--spacing-md);
    position: sticky;
-   top: 0;
+   top: calc(var(--timeline-bar-height) + 3.4rem);
    z-index: 99;
    animation: slideDown 0.3s ease;
+ }
+
+ main {
+     margin-top: var(--spacing-md);
  }
 
  @keyframes slideDown {
