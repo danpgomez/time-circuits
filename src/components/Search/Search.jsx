@@ -27,11 +27,13 @@ function Search({ setResults, status, setStatus, setSelectedTimeline }) {
             });
 
             const json = await response.json();
-
+                        
             // Check if the request was successful
             if (response.ok && json.results) {
+                // Filter out any adult films.
+                const filteredResults = json.results.filter(result => !result.adult);
                 setStatus("success");
-                setResults(json.results);
+                setResults(filteredResults);
             } else {
                 // Handle errors from the function or TMDb
                 console.error('Search error:', json.error || 'Unknown error');
